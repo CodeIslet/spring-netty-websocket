@@ -1,0 +1,12 @@
+websocket:
+  netty:
+    socket-path: /ws
+    max-content-length: 65536
+    port: 8090
+    boss-thread: 1
+    worker-thread: 4
+  pubsub:
+    provider: redis
+    host: localhost
+    port: 6379
+    channel: pubsub
