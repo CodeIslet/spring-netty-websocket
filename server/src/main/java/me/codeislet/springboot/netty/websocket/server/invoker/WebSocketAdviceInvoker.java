@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 
 /**
@@ -22,7 +22,7 @@ public class WebSocketAdviceInvoker {
     private final List<Object> adviceBeans;
 
     public WebSocketAdviceInvoker(ApplicationContext context) {
-        adviceBeans = new ArrayList<>(context.getBeansWithAnnotation(WebSocketControllerAdvice.class).values());
+        adviceBeans = new CopyOnWriteArrayList<>(context.getBeansWithAnnotation(WebSocketControllerAdvice.class).values());
     }
 
     private Method getAdvisor(Object bean, Throwable throwable) {

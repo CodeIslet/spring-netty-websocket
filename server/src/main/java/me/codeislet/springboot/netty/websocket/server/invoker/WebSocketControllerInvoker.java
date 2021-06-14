@@ -13,10 +13,10 @@ import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 
 /**
@@ -30,7 +30,7 @@ public class WebSocketControllerInvoker {
     private final ModelMapper modelMapper;
 
     public WebSocketControllerInvoker(ApplicationContext context, ModelMapper modelMapper) {
-        this.controllerBeans = new ArrayList<>(context.getBeansWithAnnotation(WebSocketController.class).values());
+        this.controllerBeans = new CopyOnWriteArrayList<>(context.getBeansWithAnnotation(WebSocketController.class).values());
         this.modelMapper = modelMapper;
     }
 
