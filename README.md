@@ -3,7 +3,7 @@
 ## Quick start
 From the command line do:
 ```
-git clone https://github.com/warchang/spring-boot-netty-websocket.git
+git clone https://github.com/CodeIslet/spring-netty-websocket.git
 cd spring-boot-netty-websocket
 mvn clean package
 java -jar service/target/*.jar
